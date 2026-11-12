@@ -1,0 +1,22 @@
+clients: {'uav0': 1178, 'uav1': 1179, 'uav2': 910, 'uav3': 916} | rounds=10 x 6 local epochs
+round-1: enc-v1 -> enc-v2 | mean local recon 0.2349 | up 13.22 MB
+round-2: enc-v2 -> enc-v3 | mean local recon 0.2274 | up 13.22 MB | global probe acc 0.5939
+round-3: enc-v3 -> enc-v4 | mean local recon 0.2202 | up 13.22 MB
+round-4: enc-v4 -> enc-v5 | mean local recon 0.2170 | up 13.22 MB | global probe acc 0.6176
+round-5: enc-v5 -> enc-v6 | mean local recon 0.2163 | up 13.22 MB
+round-6: enc-v6 -> enc-v7 | mean local recon 0.2157 | up 13.22 MB | global probe acc 0.6261
+round-7: enc-v7 -> enc-v8 | mean local recon 0.2147 | up 13.22 MB
+round-8: enc-v8 -> enc-v9 | mean local recon 0.2148 | up 13.22 MB | global probe acc 0.6362
+round-9: enc-v9 -> enc-v10 | mean local recon 0.2120 | up 13.22 MB
+round-10: enc-v10 -> enc-v11 | mean local recon 0.2125 | up 13.22 MB | global probe acc 0.6371
+{
+ "local_only_probe_acc": {
+  "uav0": 0.6294416243654822,
+  "uav1": 0.6243654822335025,
+  "uav2": 0.6463620981387479,
+  "uav3": 0.6632825719120136
+ },
+ "local_only_mean": 0.6408629441624365,
+ "federated_final_probe_acc": 0.6370558375634517
+}
+dataflow: {'bytes_up_total': 132198400, 'raw_image_bytes_held_locally': 51400704, 'raw_image_bytes_sent': 0} | guard: {'payloads_accepted': 40, 'payloads_rejected': 0}

@@ -1,0 +1,21 @@
+# Mrinal's federation experiment config (same schema as shriram/configs/experiment.yaml)
+run_name: fedavg-nodp
+seed: 0
+n_clients: 4
+n_zones: 8
+n_time_buckets: 4
+dataset:
+  name: eurosat_subset
+  manifest_path: shreyas/results/manifest.csv
+  zones_are_synthetic: true
+federation:
+  enabled: true
+  rounds: 10
+  clients_per_round: 4
+  dropout_prob: 0.0
+  shared_param_prefixes: ["embed.", "pos", "blocks.", "norm."]   # encoder only; decoder + adapters stay local
+dp:
+  enabled: false
+backend:
+  db_path: mrinal/runs/fed.sqlite
+  artefact_dir: mrinal/runs/artefacts
