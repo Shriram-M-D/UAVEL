@@ -1,0 +1,6 @@
+seed: 0
+dataset: uavid_subset
+clients: 4
+federation: false
+dp: false
+resource_policy: false  # optional, simulated only

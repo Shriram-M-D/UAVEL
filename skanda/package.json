@@ -1,0 +1,25 @@
+{
+  "name": "uav-privacy-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:mock": "VITE_USE_MOCK=1 vite",
+    "build": "tsc && vite build",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2",
+    "recharts": "2.12.7"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "vite": "5.4.8",
+    "@vitejs/plugin-react": "4.3.1",
+    "@playwright/test": "1.47.2",
+    "msw": "2.4.9"
+  }
+}

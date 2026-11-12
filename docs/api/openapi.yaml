@@ -1,0 +1,5 @@
+openapi: 3.0.3
+info:
+  title: UAV Privacy PoC API
+  version: 0.1.0
+paths: {}  # Shriram fills in during Phase 0

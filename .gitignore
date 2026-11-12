@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+.env
+# data and artefacts never go in git
+data/
+**/checkpoints/
+**/runs/
+**/results/*.pt
+*.pt
+*.npz
