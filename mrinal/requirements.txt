@@ -1,5 +1,11 @@
 torch
 numpy
-flwr
-opacus
+pandas
+scikit-learn
+matplotlib
+pyyaml
+pydantic>=2
+fastapi
+httpx
 pytest
+# flwr, opacus: added when F3 Flower runner / F7 DP land

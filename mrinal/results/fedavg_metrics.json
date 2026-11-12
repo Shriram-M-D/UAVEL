@@ -1,0 +1,437 @@
+{
+  "setup": {
+    "rounds": 10,
+    "local_epochs_per_round": 6,
+    "total_local_epochs": 60,
+    "aggregation": "FedAvg (sample-weighted), shared encoder only",
+    "dp": false,
+    "dataset": "EuroSAT subset (proxy for aerial imagery; synthetic zones)",
+    "seconds": 326.3
+  },
+  "baseline_frozen_probe_acc": 0.6091370558375635,
+  "local_only_probe_acc": {
+    "uav0": 0.6294416243654822,
+    "uav1": 0.6243654822335025,
+    "uav2": 0.6463620981387479,
+    "uav3": 0.6632825719120136
+  },
+  "local_only_mean": 0.6408629441624365,
+  "federated_global_probe_acc_by_round": {
+    "0": 0.6091370558375635,
+    "2": 0.5939086294416244,
+    "4": 0.6175972927241963,
+    "6": 0.626057529610829,
+    "8": 0.6362098138747885,
+    "10": 0.6370558375634517
+  },
+  "federated_final_probe_acc": 0.6370558375634517,
+  "dataflow": {
+    "rounds": 10,
+    "bytes_up_total": 132198400,
+    "bytes_down_total": 132198400,
+    "bytes_per_round_up": [
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840,
+      13219840
+    ],
+    "guard": {
+      "payloads_accepted": 40,
+      "payloads_rejected": 0,
+      "bytes_transmitted": 132198400,
+      "raw_image_bytes_transmitted": 0,
+      "rejection_reasons": [],
+      "allowed_fields": [
+        "client_id",
+        "metrics",
+        "model_version",
+        "num_samples",
+        "round_id",
+        "state_dict",
+        "time_buckets",
+        "zone_ids"
+      ],
+      "shared_param_prefixes": [
+        "embed.",
+        "pos",
+        "blocks.",
+        "norm."
+      ]
+    },
+    "raw_image_bytes_held_locally": 51400704,
+    "raw_image_bytes_sent": 0,
+    "how_we_know": "Every client->coordinator payload went through uav_backend.Guard.check_update, which only accepts allow-listed fields and shared-prefix parameters and rejects image-shaped or uint8 data; accepted payload count == participating client-rounds.",
+    "fields_ever_sent": [
+      "client_id",
+      "metrics",
+      "model_version",
+      "num_samples",
+      "round_id",
+      "state_dict",
+      "time_buckets",
+      "zone_ids"
+    ]
+  },
+  "ledger": {
+    "events": 50,
+    "aggregate_events": 10
+  },
+  "round_history": [
+    {
+      "round_id": "round-1",
+      "model_version_in": "enc-v1",
+      "model_version_out": "enc-v2",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.38946323038564273,
+          "train_seconds": 7.855003356933594
+        },
+        "uav1": {
+          "recon_loss": 0.09887372020496162,
+          "train_seconds": 7.706893444061279
+        },
+        "uav2": {
+          "recon_loss": 0.20393581884902912,
+          "train_seconds": 6.047839641571045
+        },
+        "uav3": {
+          "recon_loss": 0.2472094065757818,
+          "train_seconds": 6.078612565994263
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-2",
+      "model_version_in": "enc-v2",
+      "model_version_out": "enc-v3",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.37236457678579515,
+          "train_seconds": 8.10617446899414
+        },
+        "uav1": {
+          "recon_loss": 0.08880174803319273,
+          "train_seconds": 8.039531946182251
+        },
+        "uav2": {
+          "recon_loss": 0.20126556577263296,
+          "train_seconds": 6.234775066375732
+        },
+        "uav3": {
+          "recon_loss": 0.2471712472397167,
+          "train_seconds": 6.218030214309692
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-3",
+      "model_version_in": "enc-v3",
+      "model_version_out": "enc-v4",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.36901198507164856,
+          "train_seconds": 8.419995784759521
+        },
+        "uav1": {
+          "recon_loss": 0.08650726164620846,
+          "train_seconds": 8.259148120880127
+        },
+        "uav2": {
+          "recon_loss": 0.19049057767286406,
+          "train_seconds": 6.300122261047363
+        },
+        "uav3": {
+          "recon_loss": 0.23487834612875527,
+          "train_seconds": 6.368600845336914
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-4",
+      "model_version_in": "enc-v4",
+      "model_version_out": "enc-v5",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.36373511118678364,
+          "train_seconds": 8.536064624786377
+        },
+        "uav1": {
+          "recon_loss": 0.08179888608877289,
+          "train_seconds": 8.73993992805481
+        },
+        "uav2": {
+          "recon_loss": 0.1895275559726652,
+          "train_seconds": 6.706741094589233
+        },
+        "uav3": {
+          "recon_loss": 0.23283494390775022,
+          "train_seconds": 6.592969655990601
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-5",
+      "model_version_in": "enc-v5",
+      "model_version_out": "enc-v6",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.36513784001557653,
+          "train_seconds": 8.41407585144043
+        },
+        "uav1": {
+          "recon_loss": 0.08019797259703139,
+          "train_seconds": 8.609148740768433
+        },
+        "uav2": {
+          "recon_loss": 0.1880563007606255,
+          "train_seconds": 6.8004961013793945
+        },
+        "uav3": {
+          "recon_loss": 0.2318186628506173,
+          "train_seconds": 6.669302463531494
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-6",
+      "model_version_in": "enc-v6",
+      "model_version_out": "enc-v7",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.3622623343014353,
+          "train_seconds": 8.795020580291748
+        },
+        "uav1": {
+          "recon_loss": 0.08120617226233819,
+          "train_seconds": 8.577816724777222
+        },
+        "uav2": {
+          "recon_loss": 0.18880356962864214,
+          "train_seconds": 7.103466510772705
+        },
+        "uav3": {
+          "recon_loss": 0.23041768931665796,
+          "train_seconds": 7.390258073806763
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-7",
+      "model_version_in": "enc-v7",
+      "model_version_out": "enc-v8",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.35945713358135906,
+          "train_seconds": 9.953178405761719
+        },
+        "uav1": {
+          "recon_loss": 0.081126849997261,
+          "train_seconds": 9.251095533370972
+        },
+        "uav2": {
+          "recon_loss": 0.18816673408497822,
+          "train_seconds": 7.420327425003052
+        },
+        "uav3": {
+          "recon_loss": 0.2300169689816679,
+          "train_seconds": 11.110491037368774
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-8",
+      "model_version_in": "enc-v8",
+      "model_version_out": "enc-v9",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.3592323455927935,
+          "train_seconds": 9.280921220779419
+        },
+        "uav1": {
+          "recon_loss": 0.08020556970255369,
+          "train_seconds": 9.17288327217102
+        },
+        "uav2": {
+          "recon_loss": 0.19003301695152952,
+          "train_seconds": 6.961857795715332
+        },
+        "uav3": {
+          "recon_loss": 0.22957730247724525,
+          "train_seconds": 6.910888195037842
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-9",
+      "model_version_in": "enc-v9",
+      "model_version_out": "enc-v10",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.35604572802124285,
+          "train_seconds": 8.982890844345093
+        },
+        "uav1": {
+          "recon_loss": 0.079357766152136,
+          "train_seconds": 8.77454400062561
+        },
+        "uav2": {
+          "recon_loss": 0.18445011586933346,
+          "train_seconds": 6.859408617019653
+        },
+        "uav3": {
+          "recon_loss": 0.22828622871611315,
+          "train_seconds": 6.877786636352539
+        }
+      },
+      "n_contributions": 32
+    },
+    {
+      "round_id": "round-10",
+      "model_version_in": "enc-v10",
+      "model_version_out": "enc-v11",
+      "participants": [
+        "uav0",
+        "uav1",
+        "uav2",
+        "uav3"
+      ],
+      "dropped_clients": [],
+      "delayed_clients": [],
+      "stale_updates": [],
+      "bytes_up": 13219840,
+      "bytes_down": 13219840,
+      "client_metrics": {
+        "uav0": {
+          "recon_loss": 0.354609438083775,
+          "train_seconds": 8.809964895248413
+        },
+        "uav1": {
+          "recon_loss": 0.0805981229987561,
+          "train_seconds": 8.790755987167358
+        },
+        "uav2": {
+          "recon_loss": 0.18582618698313996,
+          "train_seconds": 6.997680902481079
+        },
+        "uav3": {
+          "recon_loss": 0.22913649118623358,
+          "train_seconds": 6.994884014129639
+        }
+      },
+      "n_contributions": 32
+    }
+  ]
+}
