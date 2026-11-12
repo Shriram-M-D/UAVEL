@@ -1,0 +1,629 @@
+{
+  "setup": {
+    "client": "uav0",
+    "target_zone": 0,
+    "retained_zone": 4,
+    "seeds": 3,
+    "epochs_per_mission": 30,
+    "finetune_epochs": 10,
+    "mia_pairs": 383,
+    "zones_are_synthetic": true,
+    "dataset": "EuroSAT subset (proxy)"
+  },
+  "summary": {
+    "mia_auc": {
+      "original (no erasure)": {
+        "mean": 0.4809085889194145,
+        "std": 0.00046471724443292644
+      },
+      "purge_only": {
+        "mean": 0.4809085889194145,
+        "std": 0.00046471724443292644
+      },
+      "rollback_replay": {
+        "mean": 0.4833014063767562,
+        "std": 0.0008636812659225428
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.47902932962480715,
+        "std": 0.0006254086963878906
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.4833014063767562,
+        "std": 0.0008636812659225428
+      }
+    },
+    "target_member_recon_loss": {
+      "original (no erasure)": {
+        "mean": 0.25516959088652863,
+        "std": 0.0008800187885235959
+      },
+      "purge_only": {
+        "mean": 0.25516959088652863,
+        "std": 0.0008800187885235959
+      },
+      "rollback_replay": {
+        "mean": 0.28818329540760157,
+        "std": 0.0027970013870615824
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.2613970377349037,
+        "std": 0.003774164185975497
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.28818329540760157,
+        "std": 0.0027970013870615824
+      }
+    },
+    "cosine_distance_to_reference_target_zone": {
+      "original (no erasure)": {
+        "mean": 0.05161714553833008,
+        "std": 0.011850279067747172
+      },
+      "purge_only": {
+        "mean": 0.05161714553833008,
+        "std": 0.011850279067747172
+      },
+      "rollback_replay": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.07246595621109009,
+        "std": 0.010706410841965127
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "cka_to_reference_target_zone": {
+      "original (no erasure)": {
+        "mean": 0.9759182731310526,
+        "std": 0.01616132414461314
+      },
+      "purge_only": {
+        "mean": 0.9759182731310526,
+        "std": 0.01616132414461314
+      },
+      "rollback_replay": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.9561537305514017,
+        "std": 0.02175501612894176
+      },
+      "reference (retrain w/o target)": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "retained_zone_recon_loss": {
+      "original (no erasure)": {
+        "mean": 0.522398301811512,
+        "std": 0.006691529631602495
+      },
+      "purge_only": {
+        "mean": 0.522398301811512,
+        "std": 0.006691529631602495
+      },
+      "rollback_replay": {
+        "mean": 0.5260819857741077,
+        "std": 0.002789625622151124
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.5172275838500521,
+        "std": 0.0022213869092383965
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.5260819857741077,
+        "std": 0.002789625622151124
+      }
+    },
+    "probe_acc": {
+      "original (no erasure)": {
+        "mean": 0.6223914269599549,
+        "std": 0.004173335754920668
+      },
+      "purge_only": {
+        "mean": 0.6223914269599549,
+        "std": 0.004173335754920668
+      },
+      "rollback_replay": {
+        "mean": 0.5798082346305696,
+        "std": 0.010022197204690844
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.6240834743372815,
+        "std": 0.01349224333209889
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.5798082346305696,
+        "std": 0.010022197204690844
+      }
+    },
+    "latency_ratio": {
+      "original (no erasure)": {
+        "mean": 4.621,
+        "std": 2.6465012752689163
+      },
+      "purge_only": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "rollback_replay": {
+        "mean": 0.48699999999999993,
+        "std": 0.0040000000000000036
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.328,
+        "std": 0.010583005244258372
+      },
+      "reference (retrain w/o target)": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "zone_knowledge_gap": {
+      "original (no erasure)": {
+        "mean": 0.036079482704749956,
+        "std": 0.0051867069101683575
+      },
+      "purge_only": {
+        "mean": 0.036079482704749956,
+        "std": 0.0051867069101683575
+      },
+      "rollback_replay": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "finetune_retained_10ep": {
+        "mean": 0.03296095985131787,
+        "std": 0.002529749973467653
+      },
+      "reference (retrain w/o target)": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    },
+    "zone_knowledge_gap_definition": "reference loss - model loss on target-zone images NEITHER model trained on; >0 means the model still knows the zone better than a model that never saw it; 0 = matches reference"
+  },
+  "runs": [
+    {
+      "strategy": "original (no erasure)",
+      "latency_s": 75.07,
+      "retrain_latency_s": 16.23,
+      "latency_ratio": 4.624,
+      "mia": {
+        "auc": 0.4813312518321074,
+        "ci95": [
+          0.44049586091301657,
+          0.5215344774370239
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2545878410554557,
+        "nonmember_loss": 0.2499539390310898
+      },
+      "target_member_loss": 0.2545878410554557,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.06505966186523438,
+        "linear_cka": 0.9578490257263184
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.05522036552429199,
+        "linear_cka": 0.9399446845054626
+      },
+      "retained_zone_recon_loss": 0.5166171268703272,
+      "probe_acc": 0.6243654822335025,
+      "seed": 0
+    },
+    {
+      "strategy": "purge_only",
+      "latency_s": 0.0,
+      "retrain_latency_s": 16.23,
+      "latency_ratio": 0.0,
+      "mia": {
+        "auc": 0.4813312518321074,
+        "ci95": [
+          0.44049586091301657,
+          0.5215344774370239
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2545878410554557,
+        "nonmember_loss": 0.2499539390310898
+      },
+      "target_member_loss": 0.2545878410554557,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.06505966186523438,
+        "linear_cka": 0.9578490257263184
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.05522036552429199,
+        "linear_cka": 0.9399446845054626
+      },
+      "retained_zone_recon_loss": 0.5166171268703272,
+      "probe_acc": 0.6243654822335025,
+      "seed": 0
+    },
+    {
+      "strategy": "rollback_replay",
+      "latency_s": 7.98,
+      "retrain_latency_s": 16.23,
+      "latency_ratio": 0.491,
+      "mia": {
+        "auc": 0.48404447504584525,
+        "ci95": [
+          0.44390999399596087,
+          0.5247565905594774
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.285865544010496,
+        "nonmember_loss": 0.283681838542488
+      },
+      "target_member_loss": 0.285865544010496,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.5231885867408261,
+      "probe_acc": 0.5736040609137056,
+      "seed": 0
+    },
+    {
+      "strategy": "finetune_retained_10ep",
+      "latency_s": 5.52,
+      "retrain_latency_s": 16.23,
+      "latency_ratio": 0.34,
+      "mia": {
+        "auc": 0.4786248457621226,
+        "ci95": [
+          0.4390921216441696,
+          0.5183505655911748
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2583990854990192,
+        "nonmember_loss": 0.24828686111840095
+      },
+      "target_member_loss": 0.2583990854990192,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.06071704626083374,
+        "linear_cka": 0.9811894297599792
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.05899786949157715,
+        "linear_cka": 0.9741579294204712
+      },
+      "retained_zone_recon_loss": 0.5153774187072284,
+      "probe_acc": 0.6277495769881557,
+      "seed": 0
+    },
+    {
+      "strategy": "reference (retrain w/o target)",
+      "latency_s": 16.23,
+      "retrain_latency_s": 16.23,
+      "latency_ratio": 1.0,
+      "mia": {
+        "auc": 0.48404447504584525,
+        "ci95": [
+          0.44390999399596087,
+          0.5247565905594774
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.285865544010496,
+        "nonmember_loss": 0.283681838542488
+      },
+      "target_member_loss": 0.285865544010496,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.5231885867408261,
+      "probe_acc": 0.5736040609137056,
+      "seed": 0
+    },
+    {
+      "strategy": "original (no erasure)",
+      "latency_s": 118.29,
+      "retrain_latency_s": 16.28,
+      "latency_ratio": 7.266,
+      "mia": {
+        "auc": 0.48098357750069876,
+        "ci95": [
+          0.4408927403519049,
+          0.5199796093032881
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2561819977962896,
+        "nonmember_loss": 0.2520613155349622
+      },
+      "target_member_loss": 0.2561819977962896,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.04268157482147217,
+        "linear_cka": 0.9809136986732483
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.038633882999420166,
+        "linear_cka": 0.9701305031776428
+      },
+      "retained_zone_recon_loss": 0.5208492855796129,
+      "probe_acc": 0.6175972927241963,
+      "seed": 1
+    },
+    {
+      "strategy": "purge_only",
+      "latency_s": 0.0,
+      "retrain_latency_s": 16.28,
+      "latency_ratio": 0.0,
+      "mia": {
+        "auc": 0.48098357750069876,
+        "ci95": [
+          0.4408927403519049,
+          0.5199796093032881
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2561819977962896,
+        "nonmember_loss": 0.2520613155349622
+      },
+      "target_member_loss": 0.2561819977962896,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.04268157482147217,
+        "linear_cka": 0.9809136986732483
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.038633882999420166,
+        "linear_cka": 0.9701305031776428
+      },
+      "retained_zone_recon_loss": 0.5208492855796129,
+      "probe_acc": 0.6175972927241963,
+      "seed": 1
+    },
+    {
+      "strategy": "rollback_replay",
+      "latency_s": 7.86,
+      "retrain_latency_s": 16.28,
+      "latency_ratio": 0.483,
+      "mia": {
+        "auc": 0.48235382339507393,
+        "ci95": [
+          0.4418499551308704,
+          0.5233728388350035
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.28739429069269573,
+        "nonmember_loss": 0.28454642517093387
+      },
+      "target_member_loss": 0.28739429069269573,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.5263026377233939,
+      "probe_acc": 0.5744500846023689,
+      "seed": 1
+    },
+    {
+      "strategy": "finetune_retained_10ep",
+      "latency_s": 5.21,
+      "retrain_latency_s": 16.28,
+      "latency_ratio": 0.32,
+      "mia": {
+        "auc": 0.478713468630913,
+        "ci95": [
+          0.44049886230617075,
+          0.5192252753484764
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.26015675718429215,
+        "nonmember_loss": 0.2542011534008526
+      },
+      "target_member_loss": 0.26015675718429215,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0750088095664978,
+        "linear_cka": 0.9454222321510315
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.06287533044815063,
+        "linear_cka": 0.9247251152992249
+      },
+      "retained_zone_recon_loss": 0.5166140870414038,
+      "probe_acc": 0.6091370558375635,
+      "seed": 1
+    },
+    {
+      "strategy": "reference (retrain w/o target)",
+      "latency_s": 16.28,
+      "retrain_latency_s": 16.28,
+      "latency_ratio": 1.0,
+      "mia": {
+        "auc": 0.48235382339507393,
+        "ci95": [
+          0.4418499551308704,
+          0.5233728388350035
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.28739429069269573,
+        "nonmember_loss": 0.28454642517093387
+      },
+      "target_member_loss": 0.28739429069269573,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.5263026377233939,
+      "probe_acc": 0.5744500846023689,
+      "seed": 1
+    },
+    {
+      "strategy": "original (no erasure)",
+      "latency_s": 34.25,
+      "retrain_latency_s": 17.35,
+      "latency_ratio": 1.973,
+      "mia": {
+        "auc": 0.48041093742543745,
+        "ci95": [
+          0.44016878868255915,
+          0.5194794952246492
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2547389338078408,
+        "nonmember_loss": 0.249139303676012
+      },
+      "target_member_loss": 0.2547389338078408,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.04711019992828369,
+        "linear_cka": 0.9889920949935913
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.035441696643829346,
+        "linear_cka": 0.9824893474578857
+      },
+      "retained_zone_recon_loss": 0.529728492984596,
+      "probe_acc": 0.6252115059221658,
+      "seed": 2
+    },
+    {
+      "strategy": "purge_only",
+      "latency_s": 0.0,
+      "retrain_latency_s": 17.35,
+      "latency_ratio": 0.0,
+      "mia": {
+        "auc": 0.48041093742543745,
+        "ci95": [
+          0.44016878868255915,
+          0.5194794952246492
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.2547389338078408,
+        "nonmember_loss": 0.249139303676012
+      },
+      "target_member_loss": 0.2547389338078408,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.04711019992828369,
+        "linear_cka": 0.9889920949935913
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.035441696643829346,
+        "linear_cka": 0.9824893474578857
+      },
+      "retained_zone_recon_loss": 0.529728492984596,
+      "probe_acc": 0.6252115059221658,
+      "seed": 2
+    },
+    {
+      "strategy": "rollback_replay",
+      "latency_s": 8.45,
+      "retrain_latency_s": 17.35,
+      "latency_ratio": 0.487,
+      "mia": {
+        "auc": 0.4835059206893495,
+        "ci95": [
+          0.4428351026432866,
+          0.525408469223717
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.291290051519613,
+        "nonmember_loss": 0.291164742642892
+      },
+      "target_member_loss": 0.291290051519613,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.528754732858103,
+      "probe_acc": 0.5913705583756346,
+      "seed": 2
+    },
+    {
+      "strategy": "finetune_retained_10ep",
+      "latency_s": 5.62,
+      "retrain_latency_s": 17.35,
+      "latency_ratio": 0.324,
+      "mia": {
+        "auc": 0.4797496744813857,
+        "ci95": [
+          0.440495873851644,
+          0.5205696895558617
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.26563527052139974,
+        "nonmember_loss": 0.25802211228310673
+      },
+      "target_member_loss": 0.26563527052139974,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.08167201280593872,
+        "linear_cka": 0.9418495297431946
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.06644445657730103,
+        "linear_cka": 0.8980586528778076
+      },
+      "retained_zone_recon_loss": 0.5196912458015239,
+      "probe_acc": 0.6353637901861252,
+      "seed": 2
+    },
+    {
+      "strategy": "reference (retrain w/o target)",
+      "latency_s": 17.35,
+      "retrain_latency_s": 17.35,
+      "latency_ratio": 1.0,
+      "mia": {
+        "auc": 0.4835059206893495,
+        "ci95": [
+          0.4428351026432866,
+          0.525408469223717
+        ],
+        "n_members": 383,
+        "n_nonmembers": 383,
+        "member_loss": 0.291290051519613,
+        "nonmember_loss": 0.291164742642892
+      },
+      "target_member_loss": 0.291290051519613,
+      "distance_to_reference_target_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "distance_to_reference_retained_zone": {
+        "mean_cosine_distance": 0.0,
+        "linear_cka": 1.0
+      },
+      "retained_zone_recon_loss": 0.528754732858103,
+      "probe_acc": 0.5913705583756346,
+      "seed": 2
+    }
+  ]
+}

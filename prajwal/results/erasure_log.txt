@@ -1,0 +1,70 @@
+mission1 225 imgs (zone 4) | mission2 383 zone-0 + 217 zone-4 | MIA eval 383 members vs 383 non-members
+seed 0 | original (no erasure)            MIA AUC 0.481 [0.44,0.52] | cos-dist to ref (target) 0.0651 | retained recon 0.5166 | probe 0.624 | 75.1s (4.624)
+seed 0 | purge_only                       MIA AUC 0.481 [0.44,0.52] | cos-dist to ref (target) 0.0651 | retained recon 0.5166 | probe 0.624 | 0.0s (0.0)
+seed 0 | rollback_replay                  MIA AUC 0.484 [0.44,0.52] | cos-dist to ref (target) 0.0000 | retained recon 0.5232 | probe 0.574 | 8.0s (0.491)
+seed 0 | finetune_retained_10ep           MIA AUC 0.479 [0.44,0.52] | cos-dist to ref (target) 0.0607 | retained recon 0.5154 | probe 0.628 | 5.5s (0.34)
+seed 0 | reference (retrain w/o target)   MIA AUC 0.484 [0.44,0.52] | cos-dist to ref (target) 0.0000 | retained recon 0.5232 | probe 0.574 | 16.2s (1.0)
+seed 0 done in 126s
+seed 1 | original (no erasure)            MIA AUC 0.481 [0.44,0.52] | cos-dist to ref (target) 0.0427 | retained recon 0.5208 | probe 0.618 | 118.3s (7.266)
+seed 1 | purge_only                       MIA AUC 0.481 [0.44,0.52] | cos-dist to ref (target) 0.0427 | retained recon 0.5208 | probe 0.618 | 0.0s (0.0)
+seed 1 | rollback_replay                  MIA AUC 0.482 [0.44,0.52] | cos-dist to ref (target) 0.0000 | retained recon 0.5263 | probe 0.574 | 7.9s (0.483)
+seed 1 | finetune_retained_10ep           MIA AUC 0.479 [0.44,0.52] | cos-dist to ref (target) 0.0750 | retained recon 0.5166 | probe 0.609 | 5.2s (0.32)
+seed 1 | reference (retrain w/o target)   MIA AUC 0.482 [0.44,0.52] | cos-dist to ref (target) 0.0000 | retained recon 0.5263 | probe 0.574 | 16.3s (1.0)
+seed 1 done in 169s
+seed 2 | original (no erasure)            MIA AUC 0.480 [0.44,0.52] | cos-dist to ref (target) 0.0471 | retained recon 0.5297 | probe 0.625 | 34.2s (1.973)
+seed 2 | purge_only                       MIA AUC 0.480 [0.44,0.52] | cos-dist to ref (target) 0.0471 | retained recon 0.5297 | probe 0.625 | 0.0s (0.0)
+seed 2 | rollback_replay                  MIA AUC 0.484 [0.44,0.53] | cos-dist to ref (target) 0.0000 | retained recon 0.5288 | probe 0.591 | 8.4s (0.487)
+seed 2 | finetune_retained_10ep           MIA AUC 0.480 [0.44,0.52] | cos-dist to ref (target) 0.0817 | retained recon 0.5197 | probe 0.635 | 5.6s (0.324)
+seed 2 | reference (retrain w/o target)   MIA AUC 0.484 [0.44,0.53] | cos-dist to ref (target) 0.0000 | retained recon 0.5288 | probe 0.591 | 17.4s (1.0)
+seed 2 done in 88s
+{
+ "mia_auc": {
+  "original (no erasure)": 0.4809,
+  "purge_only": 0.4809,
+  "rollback_replay": 0.4833,
+  "finetune_retained_10ep": 0.479,
+  "reference (retrain w/o target)": 0.4833
+ },
+ "target_member_recon_loss": {
+  "original (no erasure)": 0.2552,
+  "purge_only": 0.2552,
+  "rollback_replay": 0.2882,
+  "finetune_retained_10ep": 0.2614,
+  "reference (retrain w/o target)": 0.2882
+ },
+ "cosine_distance_to_reference_target_zone": {
+  "original (no erasure)": 0.0516,
+  "purge_only": 0.0516,
+  "rollback_replay": 0.0,
+  "finetune_retained_10ep": 0.0725,
+  "reference (retrain w/o target)": 0.0
+ },
+ "cka_to_reference_target_zone": {
+  "original (no erasure)": 0.9759,
+  "purge_only": 0.9759,
+  "rollback_replay": 1.0,
+  "finetune_retained_10ep": 0.9562,
+  "reference (retrain w/o target)": 1.0
+ },
+ "retained_zone_recon_loss": {
+  "original (no erasure)": 0.5224,
+  "purge_only": 0.5224,
+  "rollback_replay": 0.5261,
+  "finetune_retained_10ep": 0.5172,
+  "reference (retrain w/o target)": 0.5261
+ },
+ "probe_acc": {
+  "original (no erasure)": 0.6224,
+  "purge_only": 0.6224,
+  "rollback_replay": 0.5798,
+  "finetune_retained_10ep": 0.6241,
+  "reference (retrain w/o target)": 0.5798
+ },
+ "latency_ratio": {
+  "original (no erasure)": 4.621,
+  "purge_only": 0.0,
+  "rollback_replay": 0.487,
+  "finetune_retained_10ep": 0.328,
+  "reference (retrain w/o target)": 1.0
+ }
+}
