@@ -1,0 +1,51 @@
+{
+  "epochs": 60,
+  "dataset": "EuroSAT subset (proxy for aerial imagery; synthetic zones)",
+  "clients": {
+    "uav0": {
+      "n_images": 1178,
+      "zones": [
+        0,
+        4
+      ],
+      "probe_acc": 0.6294416243654822,
+      "final_recon_loss": 0.3137866156918893,
+      "train_seconds": 95.3,
+      "trainable_params": 951232
+    },
+    "uav1": {
+      "n_images": 1179,
+      "zones": [
+        1,
+        5
+      ],
+      "probe_acc": 0.6243654822335025,
+      "final_recon_loss": 0.08098195402221825,
+      "train_seconds": 126.1,
+      "trainable_params": 951232
+    },
+    "uav2": {
+      "n_images": 910,
+      "zones": [
+        2,
+        6
+      ],
+      "probe_acc": 0.6463620981387479,
+      "final_recon_loss": 0.1835345161485148,
+      "train_seconds": 182.7,
+      "trainable_params": 951232
+    },
+    "uav3": {
+      "n_images": 916,
+      "zones": [
+        3,
+        7
+      ],
+      "probe_acc": 0.6632825719120136,
+      "final_recon_loss": 0.2277844247599356,
+      "train_seconds": 92.9,
+      "trainable_params": 951232
+    }
+  },
+  "frozen_random_encoder_probe_acc": 0.6091370558375635
+}

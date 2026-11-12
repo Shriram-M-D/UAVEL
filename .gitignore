@@ -11,3 +11,5 @@ data/
 **/results/*.pt
 *.pt
 *.npz
+*.npy
+shreyas/data/

@@ -1,0 +1,32 @@
+{
+  "client": "uav0",
+  "shared_encoder_params": 951232,
+  "zones": {
+    "0": {
+      "adapter_params": 16960,
+      "train_seconds": 24.4,
+      "test_recon_frozen": 0.18803547322750092,
+      "test_recon_with_adapter": 0.1755739152431488,
+      "other_zone_recon_frozen": 0.4565372169017792,
+      "other_zone_recon_using_this_adapter": 0.4475192129611969
+    },
+    "4": {
+      "adapter_params": 16960,
+      "train_seconds": 16.0,
+      "test_recon_frozen": 0.4565372169017792,
+      "test_recon_with_adapter": 0.44609877467155457,
+      "other_zone_recon_frozen": 0.18803547322750092,
+      "other_zone_recon_using_this_adapter": 0.17943739891052246
+    }
+  },
+  "isolation_test": {
+    "deleted_adapter_zone": 0,
+    "other_zone": 4,
+    "other_zone_recon_before_delete": 0.44609877467155457,
+    "other_zone_recon_after_delete": 0.44609877467155457,
+    "unaffected": true,
+    "deleted_zone_recon_after_delete": 0.18803547322750092,
+    "deleted_zone_frozen_baseline": 0.18803547322750092,
+    "deleted_zone_matches_frozen": true
+  }
+}
