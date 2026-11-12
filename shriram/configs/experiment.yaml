@@ -1,6 +1,28 @@
+# Single source of truth for a run (PRD B3). Validated by uav_backend/config.py.
+run_name: dev
 seed: 0
-dataset: uavid_subset
-clients: 4
-federation: false
-dp: false
-resource_policy: false  # optional, simulated only
+n_clients: 4
+n_zones: 8
+n_time_buckets: 4
+dataset:
+  name: eurosat_subset            # proxy for UAVid/VisDrone until licence check is done
+  manifest_path: shreyas/results/manifest.csv
+  zones_are_synthetic: true
+federation:
+  enabled: false
+  rounds: 5
+  clients_per_round: 4
+  dropout_prob: 0.0
+  shared_param_prefixes: ["embed.", "pos", "blocks.", "norm."]
+dp:
+  enabled: false
+resource_policy:
+  enabled: false                  # optional, simulated only - never reported as energy
+backend:
+  db_path: shriram/runs/backend.sqlite
+  artefact_dir: shriram/runs/artefacts
+plugins:                          # 'module:Class'; empty = built-in stub
+  learner:
+  federation:
+  unlearner:
+  verifier:

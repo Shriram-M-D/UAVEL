@@ -1,0 +1,257 @@
+{
+  "round": {
+    "round_id": "round-1",
+    "model_version_in": "enc-v4",
+    "model_version_out": "enc-v5",
+    "contributions": [
+      {
+        "client_id": "uav1",
+        "zone_id": 1,
+        "time_bucket": 0
+      },
+      {
+        "client_id": "uav2",
+        "zone_id": 2,
+        "time_bucket": 2
+      },
+      {
+        "client_id": "uav3",
+        "zone_id": 3,
+        "time_bucket": 0
+      }
+    ],
+    "dropped_clients": [],
+    "bytes_up": 1441792,
+    "bytes_down": 0,
+    "stub": true
+  },
+  "locality_evidence": {
+    "payloads_accepted": 4,
+    "payloads_rejected": 1,
+    "bytes_transmitted": 1441792,
+    "raw_image_bytes_transmitted": 0,
+    "rejection_reasons": [
+      "fields not allowed to leave the client: ['images']"
+    ],
+    "allowed_fields": [
+      "client_id",
+      "metrics",
+      "model_version",
+      "num_samples",
+      "round_id",
+      "state_dict",
+      "time_buckets",
+      "zone_ids"
+    ],
+    "shared_param_prefixes": [
+      "embed.",
+      "pos",
+      "blocks.",
+      "norm."
+    ]
+  },
+  "erasures": {
+    "A_adapter_only_zone": {
+      "request": {
+        "zone_id": 0,
+        "time_buckets": null,
+        "client_ids": null,
+        "request_id": "er-cbb56f19",
+        "requested_at": 1794477813.0507922
+      },
+      "state": "VERIFIED",
+      "steps": {
+        "RESOLVED": {
+          "events": [
+            "5c11af99b840",
+            "966d00f6d181"
+          ],
+          "event_types": [
+            "memory_write",
+            "train"
+          ],
+          "direct_artefacts": [
+            "uav0-adapter-z0-v1",
+            "uav0-mem-z0-t0-v1"
+          ],
+          "tainted_artefacts": [
+            "uav0-adapter-z0-v1",
+            "uav0-mem-z0-t0-v1"
+          ],
+          "tainted_shared_encoders": [],
+          "shared_encoder_affected": false,
+          "found_influence": true,
+          "seconds": 0.0007
+        },
+        "STOPPED": {
+          "stopped": [
+            "uav0-adapter-z0-v1",
+            "uav0-mem-z0-t0-v1"
+          ],
+          "seconds": 0.0078
+        },
+        "PURGED": {
+          "purged": [
+            "uav0-adapter-z0-v1",
+            "uav0-mem-z0-t0-v1"
+          ],
+          "files_deleted": 2,
+          "seconds": 0.0055
+        },
+        "REPAIRED": {
+          "required": false,
+          "reason": "no ledger event shows target data touching the shared encoder",
+          "seconds": 0.0
+        },
+        "INVALIDATED": {
+          "invalidated": [],
+          "seconds": 0.0002
+        },
+        "VERIFIED": {
+          "results": {
+            "request_id": "er-cbb56f19",
+            "verifier": "stub",
+            "stub": true,
+            "mia_auc_before": null,
+            "mia_auc_after": null,
+            "output_distance_to_reference": null,
+            "note": "No real verification ran. Prajwal's Verifier replaces this."
+          },
+          "seconds": 0.0056
+        }
+      },
+      "complete": true,
+      "not_guaranteed": [
+        "Models or artefacts released before the request cannot be recalled by this protocol."
+      ],
+      "results": {
+        "request_id": "er-cbb56f19",
+        "verifier": "stub",
+        "stub": true,
+        "mia_auc_before": null,
+        "mia_auc_after": null,
+        "output_distance_to_reference": null,
+        "note": "No real verification ran. Prajwal's Verifier replaces this."
+      }
+    },
+    "B_shared_encoder_zone": {
+      "request": {
+        "zone_id": 2,
+        "time_buckets": null,
+        "client_ids": null,
+        "request_id": "er-36ac1b9c",
+        "requested_at": 1794477813.1503575
+      },
+      "state": "VERIFIED",
+      "steps": {
+        "RESOLVED": {
+          "events": [
+            "f1d5f490ce03",
+            "eccb5f579121",
+            "8976aaabd4a6"
+          ],
+          "event_types": [
+            "aggregate",
+            "memory_write",
+            "train"
+          ],
+          "direct_artefacts": [
+            "enc-v3",
+            "enc-v5",
+            "uav2-adapter-z2-v1",
+            "uav2-mem-z2-t2-v1"
+          ],
+          "tainted_artefacts": [
+            "enc-v3",
+            "enc-v4",
+            "enc-v5",
+            "uav2-adapter-z2-v1",
+            "uav2-mem-z2-t2-v1",
+            "uav3-adapter-z3-v1",
+            "uav3-mem-z3-t0-v1"
+          ],
+          "tainted_shared_encoders": [
+            "enc-v3",
+            "enc-v4",
+            "enc-v5"
+          ],
+          "shared_encoder_affected": true,
+          "found_influence": true,
+          "seconds": 0.001
+        },
+        "STOPPED": {
+          "stopped": [
+            "enc-v5",
+            "uav2-adapter-z2-v1",
+            "uav2-mem-z2-t2-v1",
+            "uav3-adapter-z3-v1",
+            "uav3-mem-z3-t0-v1"
+          ],
+          "seconds": 0.0068
+        },
+        "PURGED": {
+          "purged": [
+            "uav2-adapter-z2-v1",
+            "uav2-mem-z2-t2-v1"
+          ],
+          "files_deleted": 2,
+          "seconds": 0.0077
+        },
+        "REPAIRED": {
+          "required": true,
+          "strategy": "rollback",
+          "rolled_back_to": "enc-v2",
+          "new_artefact_ids": [
+            "enc-v6"
+          ],
+          "latency_s": 0.007540225982666016,
+          "retained_updates_lost": [
+            "enc-v3",
+            "enc-v4",
+            "enc-v5"
+          ],
+          "not_guaranteed": [
+            "retained-zone updates after the rollback point are lost until replayed"
+          ],
+          "seconds": 0.0076
+        },
+        "INVALIDATED": {
+          "invalidated": [
+            "enc-v3",
+            "enc-v4",
+            "enc-v5",
+            "uav3-adapter-z3-v1",
+            "uav3-mem-z3-t0-v1"
+          ],
+          "seconds": 0.0069
+        },
+        "VERIFIED": {
+          "results": {
+            "request_id": "er-36ac1b9c",
+            "verifier": "stub",
+            "stub": true,
+            "mia_auc_before": null,
+            "mia_auc_after": null,
+            "output_distance_to_reference": null,
+            "note": "No real verification ran. Prajwal's Verifier replaces this."
+          },
+          "seconds": 0.0062
+        }
+      },
+      "complete": true,
+      "not_guaranteed": [
+        "Models or artefacts released before the request cannot be recalled by this protocol.",
+        "retained-zone updates after the rollback point are lost until replayed"
+      ],
+      "results": {
+        "request_id": "er-36ac1b9c",
+        "verifier": "stub",
+        "stub": true,
+        "mia_auc_before": null,
+        "mia_auc_after": null,
+        "output_distance_to_reference": null,
+        "note": "No real verification ran. Prajwal's Verifier replaces this."
+      }
+    }
+  }
+}
